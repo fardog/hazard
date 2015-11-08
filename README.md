@@ -18,7 +18,7 @@ wordlist, or provide your own!
 (words "my/list.txt" 3) ; ("my" "great" "words")
 
 ; or just provide a list
-(words ["bear" "cat" "dog"] 2) ; ("bear" "dog")
+(words ["bear" "cat" "dog"] 2 {:max 3}) ; ("dog" "cat")
 ```
 
 ## License
