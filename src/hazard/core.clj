@@ -4,7 +4,6 @@
             [hazard.common :as hazard]))
 
 (def 
-  ^{:private true}
   default-words (io/file (io/resource "mwords/113809of.fic")))
 
 (defn- do-load-and-parse
