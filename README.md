@@ -5,6 +5,8 @@ wordlist, or provide your own!
 
 [![Build Status](http://img.shields.io/travis/fardog/hazard/master.svg?style=flat-square)](https://travis-ci.org/fardog/hazard)
 
+[![Clojars Project](http://clojars.org/hazard/latest-version.svg)](http://clojars.org/hazard)
+
 ## Usage
 
 ```clojure
