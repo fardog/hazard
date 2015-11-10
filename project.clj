@@ -1,4 +1,4 @@
-(defproject hazard "0.1.0-SNAPSHOT"
+(defproject hazard "0.1.0"
   :description "Get random words."
   :url "https://github.com/fardog/hazard"
   :license {:name "Eclipse Public License"
