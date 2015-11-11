@@ -15,8 +15,10 @@
   ^{:private true}
   load-and-parse (memoize do-load-and-parse))
 
-(def words hazard/words)
-
+(defmulti words
+  (fn [x & args] (class x)))
+(defmethod words :default [& args]
+  (apply hazard/-do-words args))
 (defmethod words String [path & args]
   (apply hazard/-do-words (load-and-parse (io/file path)) args))
 (defmethod words Number [& args]

@@ -5,7 +5,8 @@
   [coll n]
   (if (<= n (count coll))
     (take n (shuffle coll))
-    (throw (Exception. "More items requested than are available."))))
+    (throw #?(:clj (Exception. "More items requested than are available.")
+              :cljs (js/Error. "More items requested than are available.")))))
 
 (defn take-random-n
   "Given a collection of items, retrieve n items, optionally those that pass
@@ -33,8 +34,3 @@
           words
           n
           (filter #(not (nil? %)) [min max]))))
-
-(defmulti words
-  (fn [x & args] (class x)))
-(defmethod words :default [& args]
-  (apply -do-words args))
