@@ -1,13 +1,15 @@
 # hazard
 
-A Clojure library for getting random dictionary words; use the included
-wordlist, or provide your own!
+A Clojure/ClojureScript library for getting random words, with optional length
+requirements. The Clojure version includes a high-quality default word list.
 
-[![Build Status](http://img.shields.io/travis/fardog/hazard/master.svg?style=flat-square)](https://travis-ci.org/fardog/hazard)
+[![Build Status][build-icon]][build-status]
 
-[![Clojars Project](http://clojars.org/hazard/latest-version.svg)](http://clojars.org/hazard)
+[![Clojars Project][clojars-icon]][clojars-link]
 
 ## Usage
+
+### Clojure
 
 ```clojure
 (require '[hazard.core :refer :all])
@@ -25,12 +27,24 @@ wordlist, or provide your own!
 (words ["bear" "cat" "dog"] 2 {:max 3}) ; ("dog" "cat")
 ```
 
+### ClojureScript
+
+The ClojureScript version doesn't currently include a default wordlist, it's up
+to you to provide one:
+
+```clojurescript
+(words ["bear" "cat" "dog"] 2 {:max 3}) ; ("dog" "cat")
+```
+
 ## API
 
 - **words**
     - `(words num-words)`
     - `(words coll num-words)`
     - `(words file-path num-words)`
+
+**Note:** The ClojureScript version only supports the `(words coll num-words)`
+arity.
 
 Each arity can take an `opts` map as its last parameter, with the following
 keys:
@@ -63,8 +77,11 @@ user=>
 
 ## Test
 
+Tests require that [PhantomJS][phantom] v2.0.0 or greater is installed, and
+available on your `$PATH` as `phantomjs`:
+
 ```bash
-$ lein test
+$ lein test && lein doo phantom test once
 ```
 
 ## License
@@ -94,3 +111,9 @@ Grady Ward
 3449 Martha Ct.
 Arcata, CA  95521-4884
 ```
+
+[build-status]: https://travis-ci.org/fardog/hazard
+[build-icon]: http://img.shields.io/travis/fardog/hazard/master.svg?style=flat-square
+[clojars-link]: http://clojars.org/hazard
+[clojars-icon]: http://clojars.org/hazard/latest-version.svg
+[phantom]: http://phantomjs.org/
