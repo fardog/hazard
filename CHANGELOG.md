@@ -2,7 +2,8 @@
 All notable changes to this project will be documented in this file. This change
 log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
-## [Unreleased][unreleased]
+
+## [0.2.0][] - 2015-11-13
 ### Added
 - Exposes library to ClojureScript
 
@@ -10,13 +11,10 @@ log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 - Moves the common lib functions to a `.cljc` with macros covering clj/cljs
   differences
 
-### Removed
 
-### Fixed
-
-
-## [0.1.0] - 2015-11-09
+## [0.1.0][] - 2015-11-09
 - Initial Release
 
-[unreleased]: https://github.com/fardog/hazard/compare/0.1.0...HEAD
+[unreleased]: https://github.com/fardog/hazard/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/fardog/hazard/releases/tag/0.1.0...0.2.0
 [0.1.0]: https://github.com/fardog/hazard/releases/tag/0.1.0
