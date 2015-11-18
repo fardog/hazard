@@ -1,4 +1,4 @@
-(defproject hazard "0.2.0"
+(defproject hazard "0.3.0"
   :description "Get random words, with optional length requirements; for Clojure/ClojureScript"
   :url "https://github.com/fardog/hazard"
   :license {:name "Eclipse Public License"
