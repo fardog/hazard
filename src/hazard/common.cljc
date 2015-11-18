@@ -3,10 +3,11 @@
 (defn- do-take-random-n
   "Given a collection, take n random items."
   [coll n]
-  (if (<= n (count coll))
-    (take n (shuffle coll))
-    (throw #?(:clj (Exception. "More items requested than are available.")
-              :cljs (js/Error. "More items requested than are available.")))))
+  (let [candidate-count (count coll)]
+    (if (<= n candidate-count)
+      (with-meta (take n (shuffle coll)) {:candidate-count candidate-count})
+      (throw #?(:clj (Exception. "More items requested than are available.")
+                :cljs (js/Error. "More items requested than are available."))))))
 
 (defn take-random-n
   "Given a collection of items, retrieve n items, optionally those that pass

@@ -25,6 +25,9 @@ requirements. The Clojure version includes a high-quality default word list.
 
 ; or just provide a list
 (words ["bear" "cat" "dog"] 2 {:max 3}) ; ("dog" "cat")
+
+; get the number of candidate words the list was picked from
+(:candidate-count (meta (words ["bear" "cat" "dog"] 2 {:max 3}))) ; 2
 ```
 
 ### ClojureScript
