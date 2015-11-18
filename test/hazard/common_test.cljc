@@ -29,3 +29,10 @@
     (let [expected (concat six seven)]
       (is (= (sort (random-strings-in-bounds breads (count expected) 6 7))
              (sort expected))))))
+
+(deftest provides-candiate-count-metadata
+  (testing "Can get candidate counts from metadata"
+    (let [taken (take-random-n breads 3)
+          metadata (meta taken)]
+      (is (not (nil? metadata)))
+      (is (= (count breads) (:candidate-count metadata))))))

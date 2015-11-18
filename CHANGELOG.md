@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file. This change
 log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
 
+## [unreleased][]
+### Added
+- Metadata `:candidate-count` to returned wordlists, which contains the number
+  of candidate words that the wordlist was selected from
 
 ## [0.2.0][] - 2015-11-13
 ### Added
